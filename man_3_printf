@@ -1,0 +1,80 @@
+.TH man 1 "19 April 2022" "0.1" "Custom _printf function"
+.SH NAME
+.B _printf - an implementation of printf function
+- 
+.SH SYNOPSIS
+.B _printf() 
+- is a Holberton school group project. The task is to write a custom version of printf() from standard library.
+.SH DESCRIPTION
+This is simple clone of _printf function with basic functionality, but we are adding support for more specifiers, length modifiers and precision
+.SH OPTIONS
+.B %c
+- prints a character
+.br
+.B %%
+- Prints a %
+.br
+.B  %d & %i
+- Prints an integer
+.br
+.B %s
+- prints a string
+.br
+.B %b
+- prints a binary, custom specifier
+.br
+.B %o
+- Prints an octal number
+.br
+.B  %x
+- Prints a hexadecimal number
+.br
+.B %X
+- prints a hexadecimal in uppercase
+.br
+.B %u
+- prints a character
+.br
+.B %S
+- Prints a %
+.br
+.B  %p
+- Prints an address
+.br
+.B %r
+- prints a string in reverse
+.br
+.B %R
+- prints a string in rot13
+.br
+.SH The flag characters
+.B #
+- The value should be converted to an "alternate form". For o conversions, the first character of the output string is made zero (by prefixing a 0 if it was not zero already). For x and X conversions, a nonzero result has the string "0x" (or "0X" for X conversions) prepended to it. For a, A, e, E, f, F, g, and G conversions, the result will always contain a decimal point, even if no digits follow it (normally, a decimal point appears in the results of those conversions only if a digit follows). For g and G conversions, trailing zeros are not removed from the result as they would otherwise be. For other conversions, the result is undefined.
+
+.br
+.B 0
+- The value should be zero padded. For d, i, o, u, x, X, a, A, e, E, f, F, g, and G conversions, the converted value is padded on the left with zeros rather than blanks. If the 0 and - flags both appear, the 0 flag is ignored. If a precision is given with a numeric conversion (d, i, o, u, x, and X), the 0 flag is ignored. For other conversions, the behavior is undefined.
+.br
+
+.B ' '(space)
+A blank should be left before a positive number (or empty string) produced by a signed conversion.
+
+.SH The length modifier
+.B h
+
+A following integer conversion corresponds to a short int or unsigned short int argument, or a following n conversion corresponds to a pointer to a short int argument.
+
+.B l
+
+(ell) A following integer conversion corresponds to a long int or unsigned long int argument, or a following n conversion corresponds to a pointer to a long int argument, or a following c conversion corresponds to a wint_t argument, or a following s conversion corresponds to a pointer to wchar_t argument.
+
+
+.B 
+.SH SEE ALSO
+.I printf(1), asprintf(3), dprintf(3), scanf(3), setlocale(3), wcrtomb(3), wprintf(3), locale(5)
+.SH BUGS
+.B '-', '+', ' '(space)
+flags work almost flawlessly, but still we are having issues
+
+.SH AUTHOR
+Mohamed Chebbi, Ana Cecilia Zapata Salas 
